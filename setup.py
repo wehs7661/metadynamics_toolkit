@@ -44,6 +44,15 @@ setup(
     # Allows `setup.py test` to work correctly with pytest
     setup_requires=[] + pytest_runner,
 
+    # Add entry points
+    entry_points={
+        'console_scripts':[
+            'calculate_free_energy = metadynamics_toolkit.calculate_free_energy:main',
+            'analyze_hills = metadynamics_toolkit.analyze_toolkit:main',
+            'deduplicate = metadynamics_toolkit.deduplicate:main',
+        ],
+    },
+
     # Additional entries you may want simply uncomment the lines you want and fill in the data
     # url='http://www.my_package.com',  # Website
     # install_requires=[],              # Required packages, pulls from pip if needed; do not use for Conda deployment
